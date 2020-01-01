@@ -29,13 +29,13 @@ Y = np.array(data[predict])
 
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size=0.01)
 
+# drawing linear-fit line Y = mX + b
 linear = linear_model.LinearRegression()
-
 linear.fit(x_train, y_train)
 accuracy = linear.score(x_test, y_test)
 
-# x = mx + b, x is the predicted accuracy
-print("x = ", accuracy)
+# Y = mX + b, Y is the predicted accuracy
+print("y = ", accuracy)
 
 # coefficient of five different variables
 print("Coefficients (m) are: \n", linear.coef_)
