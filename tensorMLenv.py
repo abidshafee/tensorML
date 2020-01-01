@@ -9,11 +9,22 @@ from sklearn.utils import shuffle
 data = pd.read_csv("student-mat.csv", sep=";")
 # print(data.head())
 
+# data set of 5 different attributes
 data = data[["G1", "G2", "G3", "studytime", "failures", "absences"]]
 
-predict = "G2"
+# G3 is the Final Grade of Students.
+# based on all attributes in data set
+# we will predict G3
+predict = "G3"
 
+# We're taking data in X from above dataSet
+# But we've to drop 'G3', BCOZ we'll predict G3
+# using attributes in above dataSet
+# so X will return new data set that doesn't have G3
 X = np.array(data.drop([predict], 1))
+
+# X is our training data, Based on
+# X we'll predict Y
 Y = np.array(data[predict])
 
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size=0.01)
