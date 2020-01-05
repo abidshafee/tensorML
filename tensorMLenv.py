@@ -6,6 +6,7 @@ import pandas as pd
 from sklearn import linear_model
 from sklearn.utils import shuffle
 
+# -------------Linear Regression----------------
 data = pd.read_csv("student-mat.csv", sep=";")
 # print(data.head())
 
@@ -41,3 +42,14 @@ print("y = ", accuracy)
 print("Coefficients (m) are: \n", linear.coef_)
 # y= mx+b, here b is the intercept point on Y-axis
 print("Intercept(b): \n", linear.intercept_)
+
+predictions = linear.predict(x_test)
+
+for x in range(len(predictions)):
+    print("Prediction: ", predictions[x], "Learn-X: ", x_test[x], "Learn-Y: ", y_test[x])
+
+
+
+
+
+# -------------- END-OF-LINEAR-REGRASSION ------------------
